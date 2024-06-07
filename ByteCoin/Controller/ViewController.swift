@@ -27,7 +27,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //Called by the picker when user selects a row
     //didSelectRow()
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(coinManager.currencyArray[row])
+        let selectedCurrency = coinManager.currencyArray[row]
+        coinManager.getCoinPrice(for: selectedCurrency)
     }
     
     override func viewDidLoad() {
